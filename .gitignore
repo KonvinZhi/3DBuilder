@@ -1,0 +1,37 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local tools, dependencies, and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.cache/
+.tmp/
+
+# Generated outputs
+/build/
+/dist/
+/coverage/
+.coverage
+*.log
+
+# Editor and operating-system state
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Codex local state; project instructions and skills stay versioned
+.codex/auth.json
+.codex/sessions/
+.codex/log/
+.codex/*.sqlite*
