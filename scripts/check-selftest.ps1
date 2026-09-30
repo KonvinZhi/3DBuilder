@@ -6,7 +6,8 @@ $ErrorActionPreference = 'Stop'
 $PSNativeCommandUseErrorActionPreference = $false
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $checker = Join-Path $PSScriptRoot 'check.ps1'
-$pwsh = (Get-Command pwsh -CommandType Application).Source
+# Ubuntu 映像里 pwsh 往往有多条路径。取全部结果的 Source 会被拼成一条命令。
+$pwsh = (Get-Command pwsh -CommandType Application | Select-Object -First 1).Source
 $utf8 = [System.Text.UTF8Encoding]::new($false)
 $tempBase = [System.IO.Path]::GetFullPath([System.IO.Path]::GetTempPath())
 $scratch = Join-Path $tempBase ('3dbuilder-check-' + [guid]::NewGuid().ToString('N'))
