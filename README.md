@@ -34,6 +34,6 @@ pwsh -NoProfile -File scripts/check-selftest.ps1
 
 自检在系统临时目录建立副本，覆盖正常记录及格式、语法、链接和记录状态错误，结束后清理副本。输出 `Checker self-tests passed` 且退出码为 `0` 表示通过；失败返回 `1`。它不修改工作区文档。
 
-不检查外部链接、Markdown 锚点、引用式或复杂链接、YAML 语义、秘密泄露，也不判断文字是否真实、不构建或测试应用。首个业务功能加入时，将真实构建、静态检查和行为测试接入 [CI](.github/workflows/ci.yml)。CI 配置覆盖 Windows / Linux；Linux 和云端 CI 尚未实际验证。
+不检查外部链接、Markdown 锚点、引用式或复杂链接、YAML 语义、秘密泄露，也不判断文字是否真实、不构建或测试应用。首个业务功能加入时，将真实构建、静态检查和行为测试接入 [CI](.github/workflows/ci.yml)。CI 配置覆盖 Windows / Linux。2026-09-30 的 [GitHub Actions](https://github.com/KonvinZhi/3DBuilder/actions/runs/36677529190) 已在这两个系统上通过；该结果只覆盖仓库骨架和检查器样例。
 
 已安装的技能存放在 `.agents/skills/`，按 [技能分工与接入约定](docs/README.md#技能分工与接入) 使用。

@@ -20,6 +20,6 @@
 
 本地与 [CI](../.github/workflows/ci.yml) 使用根 [README 的检查命令](../README.md)。检查器只读取自有骨架文件；自检在系统临时目录验证检查器的正常与失败路径。检查器不能判断业务事实、设计可行性或验证证据的充分性。
 
-CI 配置覆盖 Windows / Linux，令牌仅请求 `contents: read`，checkout 不保留凭据。Linux 与云端 CI 尚未实际验证。首次加入应用代码时，再接入真实启动、构建、静态检查和行为测试。
+CI 配置覆盖 Windows / Linux，令牌仅请求 `contents: read`，checkout 不保留凭据。2026-09-30 的 [GitHub Actions](https://github.com/KonvinZhi/3DBuilder/actions/runs/36677529190) 已在这两个系统上通过仓库检查和检查器自检。首次加入应用代码时，再接入真实启动、构建、静态检查和行为测试。
 
 首次实现时必须验证实际的数据访问、失败处理和本地运行行为；接入商业模型时验证外发授权与费用边界。约束的主要维护位置是 [产品文档](product.md)。
